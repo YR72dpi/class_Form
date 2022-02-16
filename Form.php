@@ -171,7 +171,6 @@ class Form {
                 return filter_input_array(INPUT_GET, $m);
             }
             
-            
         } else {
             return false;
         }
