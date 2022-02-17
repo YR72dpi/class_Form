@@ -78,7 +78,7 @@ class Form {
      * @param string $br true or false to close or not the form
      */
     public function setAutoClose(bool $c = true){
-        $this->autoClose = ($c) ? true : false;
+        $this->autoClose = $c;
     }
 
     /* ___ GET ___ */
@@ -162,6 +162,13 @@ class Form {
         $formToPrint .= $this->autoClose ? "</form>" : "";
 
         echo $formToPrint;
+    }
+
+    /**
+     * Get the form closer </form>
+     */
+    public function getCloser() {
+        echo "</form>";
     }
 
     /**
