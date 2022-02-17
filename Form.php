@@ -118,13 +118,19 @@ class Form {
                 $label = '<label for="Form-'.$nb_label.'">'.$v["label"].'</label>'.$this->br[1];
             } else { $label =""; }
 
+            // required
+            if (isset($v["required"]) && !empty($v["required"])){
+                if (is_bool($v["required"])) {
+                    $required = $v["required"] ? "required" : "";
+                } else { $required =""; }
+            } else { $required =""; }
+
+            // Others in input
             if (isset($v['others']) && !empty($v['others'])) {
                 $others = " ".$v['others']." ";
             } else { $others =""; }
 
-
-
-            // <input>
+            // write <input>
             if(preg_match('/textarea/i', $type)){ // if it's a textarea
 
                 $input = "<textarea".$name.$value.$placeholder;
@@ -141,7 +147,7 @@ class Form {
                 if(!empty($label)){
                     $input .= " id='Form-".$nb_label."'";
                 }
-                $input .= $others."/>".$this->br[0];
+                $input .= $required.$others."/>".$this->br[0];
 
                 if(preg_match('/checkbox/i', $type)) { // if it's checkbox
                     $formToPrint .= str_replace("<br>", " ", $input).$label;

@@ -5,44 +5,45 @@ This class was made to create a form with label and some others options easier, 
 ```php
 $form = new Form([
             "pseudo"=>[
-                       "type" => "text",
-                      "value" => "",
+                "type" => "text",
+                "value" => "",
                 "placeholder" => "Pseudo",
-                      "label" => "Votre pseudo : "
+                "label" => "Votre pseudo : ",
+                "required" => true
             ],
             "mdp"=>[
-                       "type" => "password",
-                      "value" => "",
+                "type" => "password",
+                "value" => "",
                 "placeholder" => "Mot de passe",
-                      "label" => "Votre mot de passe :"
+                "label" => "Votre mot de passe :",
+                "required" => true
             ],
             "text"=>[
-                       "type" => "textarea",
-                      "value" => "",
+                "type" => "textarea",
+                "value" => "",
                 "placeholder" => "texte",
-                      "label" => "Commentaire"
+                "label" => "Commentaire"
             ],
             "check"=>[
                 "type" => "checkbox",
-               "value" => "1",
-            "placeholder" => "texte",
-                "label" => "CGU : "
+                "value" => "1",
+                "placeholder" => "texte",
+                "label" => "CGU : ",
+                "required" => true
             ],
-            "mus"=>[
+            "music"=>[
                 "type" => "file",
-                "value" => "",
-                "placeholder" => "",
-                "label" => "Fichier ",
+                "label" => "Fichier : ",
                 "others" => "multiple"
             ],
             ""=>[
-                       "type" => "submit",
-                      "value" => "Envoyer",
+                "type" => "submit",
+                "value" => "Envoyer",
                 "placeholder" => "",
-                      "label" => ""
+                "label" => ""
             ]
         ]);
-  
+        
         $form->getForm();
 ```
 
