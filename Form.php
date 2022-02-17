@@ -6,7 +6,7 @@ class Form {
 	\* ------------------------------------- */
     /* --- VAR --- */
     private $tab_form; // Tableau du formulaire
-    private $method; // method dur formulaire
+    private $method; // method du formulaire
     private $action; // action du formulaire
     private $br; // retour à la ligne ou nom
     private $autoClose; // fermer le formulaire ou non
