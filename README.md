@@ -51,3 +51,27 @@ And you can get the form values in an array with
 ```php
 $form->getValue()
 ```
+
+## setAutoClose() & getCloser()
+If you want, you can let the form tag open ("< /form >" not print), write you own code and close it after.
+
+But by default, getForm() auto close the form tag. To prevent it, you have to write :
+```php
+$form->setAutoClose(false);
+```
+After, generate your form :
+```php
+$form = new Form([
+            // your form param
+        ]);
+        
+$form->getForm();
+```
+Write your own code in the form : 
+```html
+    <!-- your own code -->
+```
+To finish, close the form tag:
+```php
+$form->getCloser();
+```
